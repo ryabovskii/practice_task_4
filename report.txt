@@ -1,0 +1,31 @@
+Способ задания графа: список инцидентности (vector<pair<int,vector<int>>> graphVertices;)
+
+
+Функции:
+
+ int getInt(int bottom, int top, string message)
+  Возвращает считываемое с клавиатуры инт число учитывая границы и выводя сообщение
+
+ int** getPairs(int n, int m)
+  Возвращает считываемый с клавиатуры двумерный динамический массив размером m*2 где m - количество пар солдат, про которых прапорщик знает, кто из них выше, а n - количество солдат в роте
+
+ int searchIndexPair(vector<pair<int,vector<int>>> graph, int sElem)
+  Возвращает индекс пары, где вершина sElem, в списке инцидентности или -1 если такой пары нет
+
+ void addGraphVertices(vector<pair<int,vector<int>>>& graph, int a, int b)
+  Воид функция, которая получает ссылку на список ицидентности и добавляет в него вершины а и б, или если они уже есть добавляет в вектор путей из а - б
+
+ bool searchLoop(vector<pair<int,vector<int>>> graph)
+  Возвращает true если в графе graph есть зацикливания, вызывает внутреннюю функцию 
+
+ bool searchLoop(vector<pair<int,vector<int>>> graph, bool painted[], int currentIndex)
+  Выполняет обход в глубину. Возвращает true если в графе graph есть зацикливания, painted[] - массив уже посещенных вершин, currentIndex - индекс обрабатываемой сейчас вершины в vector<pair<int,vector<int>>> graph
+
+ auto searchNumberIter(list<int> &list, int sElem)
+  Возвращает итератор на елемент sElem в списке list
+
+ bool checkCorrectness(list<int> l, int a, int b)
+  Проверяет корректность расположения элементов а и б в списке l, если первый встречается элемент б то возвращается false, если а - true
+
+ void printRanking(vector<pair<int,vector<int>>> graph, int n)
+  Воид функция, выполняющая обход в ширину графа graph, которая выводит список размера n, который сортируется в процессе обхода графа
